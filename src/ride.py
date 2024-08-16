@@ -1,5 +1,4 @@
-import time 
-from datetime import datetime
+import datetime
 import pytz
 from fares import Fare 
 #import logging
@@ -14,7 +13,7 @@ class Ride:
         self.time_in_pause = 0 #tiempo en pausa
         self.time_in_movement = 0 #tiempo total en movimiento
         self.time_start_ride = None
-        self.last_change = 0 #tiempo desde el ultimo cambio      
+        self.last_change = None #tiempo desde el ultimo cambio      
         
       
         
@@ -67,7 +66,7 @@ class Ride:
             self._update_times()
             print("Detenido")
         else:
-            print("Ya detenido. ¿Desea reanudar la marcha o finalizar la carrera?")a reanudar la marcha o finalizar la carrera?")
+            print("Ya detenido. ¿Desea reanudar la marcha o finalizar la carrera?")
     
     def _update_times(self):
         now = datetime.datetime.now(pytz.timezone('Europe/Madrid'))
